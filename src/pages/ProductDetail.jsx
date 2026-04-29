@@ -2,6 +2,8 @@
 // Fetches product data based on the :id route parameter
 // Uses the same custom hook (useProductFetch) for data fetching
 import { useParams, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
 import useProductFetch from '../hooks/useProductFetch';
 import './ProductDetail.css';
 
@@ -14,10 +16,12 @@ const ProductDetail = () => {
     `https://dummyjson.com/products/${id}`
   );
 
-  // Temporary handler — will be replaced with Redux dispatch in Phase 5
+  // useDispatch gives us access to dispatch Redux actions
+  const dispatch = useDispatch();
+
+  // Dispatch addToCart action to Redux store
   const handleAddToCart = () => {
-    console.log('Add to cart:', product.title);
-    alert(`${product.title} added to cart!`);
+    dispatch(addToCart(product));
   };
 
   // Loading state

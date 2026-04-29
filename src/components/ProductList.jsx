@@ -1,6 +1,8 @@
 // ProductList component - fetches and displays all products
 // Uses the custom hook useProductFetch for data fetching
-// Renders a grid of ProductItem components
+// Dispatches addToCart action to Redux store
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
 import useProductFetch from '../hooks/useProductFetch';
 import ProductItem from './ProductItem';
 import './ProductItem.css';
@@ -12,10 +14,12 @@ const ProductList = () => {
   // Fetch products using our custom hook
   const { data, loading, error } = useProductFetch(API_URL);
 
-  // Temporary handler — will be replaced with Redux dispatch in Phase 5
+  // useDispatch gives us access to dispatch Redux actions
+  const dispatch = useDispatch();
+
+  // Dispatch addToCart action when "Add to Cart" is clicked
   const handleAddToCart = (product) => {
-    console.log('Add to cart:', product.title);
-    alert(`${product.title} added to cart!`);
+    dispatch(addToCart(product));
   };
 
   // Show loading state while fetching
@@ -40,9 +44,9 @@ const ProductList = () => {
       <div className="product-list__grid">
         {data?.products?.map((product) => (
           <ProductItem
-            key={product.id}       // unique key for each list item
-            product={product}       // pass product data as prop
-            onAddToCart={handleAddToCart}  // pass callback as prop
+            key={product.id}
+            product={product}
+            onAddToCart={handleAddToCart}
           />
         ))}
       </div>

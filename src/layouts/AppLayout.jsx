@@ -6,8 +6,8 @@ import Header from '../components/Header';
 const AppLayout = () => {
   return (
     <div>
-      {/* Header with navigation — cartCount will be wired to Redux in Phase 5 */}
-      <Header cartCount={0} />
+      {/* Header with navigation — reads cart count from Redux store */}
+      <Header />
 
       {/* Main content area — child routes render here */}
       <main style={{ padding: '20px' }}>

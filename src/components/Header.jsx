@@ -1,11 +1,15 @@
 // Header component - displays navigation menu and cart icon
 // Uses NavLink for active route highlighting
+// Reads cart count from Redux store using useSelector
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectCartCount } from '../redux/cartSlice';
 import './Header.css';
 
-// Props:
-//   cartCount (number) - total items in the cart (will come from Redux later)
-const Header = ({ cartCount = 0 }) => {
+const Header = () => {
+  // Read the total cart item count from Redux store
+  const cartCount = useSelector(selectCartCount);
+
   return (
     <header className="header">
       {/* Brand logo — links to home */}
