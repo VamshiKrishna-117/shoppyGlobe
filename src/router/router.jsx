@@ -20,7 +20,7 @@ const SuspenseWrapper = ({ children }) => {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout />,      // Layout wrapper for all routes
+    element: <AppLayout />,      // Layout wrapper for all  routes
     errorElement: (               // Catches any routing errors (404s)
       <SuspenseWrapper>
         <NotFound />
