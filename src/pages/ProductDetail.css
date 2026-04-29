@@ -1,0 +1,136 @@
+/* ============================================
+   ProductDetail Page Styles
+   ============================================ */
+
+.product-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Layout: image on left, info on right */
+.product-detail__content {
+  display: flex;
+  gap: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Product image */
+.product-detail__image {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+/* Product info section */
+.product-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-detail__category {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: capitalize;
+}
+
+.product-detail__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.product-detail__description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.product-detail__price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e94560;
+}
+
+.product-detail__rating {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.product-detail__stock {
+  font-size: 0.85rem;
+  color: #28a745;
+  font-weight: 600;
+}
+
+.product-detail__stock--low {
+  color: #e94560;
+}
+
+/* Add to Cart button */
+.product-detail__btn {
+  margin-top: 10px;
+  padding: 12px 25px;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.product-detail__btn:hover {
+  background-color: #e94560;
+}
+
+/* Back link */
+.product-detail__back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.product-detail__back:hover {
+  color: #e94560;
+}
+
+/* Loading and error states */
+.product-detail__loading,
+.product-detail__error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.product-detail__error {
+  color: #e94560;
+}
+
+/* ============================================
+   Responsive — Mobile
+   ============================================ */
+@media (max-width: 768px) {
+  .product-detail__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-detail__image {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+  }
+}
