@@ -3,6 +3,7 @@
 //   product (object) - product data from the API
 //   onAddToCart (function) - callback when "Add to Cart" is clicked (wired to Redux in Phase 5)
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './ProductItem.css';
 
 const ProductItem = ({ product, onAddToCart }) => {
@@ -44,6 +45,17 @@ const ProductItem = ({ product, onAddToCart }) => {
       </div>
     </div>
   );
+};
+
+ProductItem.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    thumbnail: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
 
 export default ProductItem;
