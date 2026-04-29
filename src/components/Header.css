@@ -1,0 +1,100 @@
+/* ============================================
+   Header Component Styles
+   ============================================ */
+
+/* Main header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo / Brand name */
+.header__logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e94560;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.header__logo:hover {
+  opacity: 0.9;
+}
+
+/* Navigation links container */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Individual nav link */
+.header__link {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.header__link:hover {
+  color: #ffffff;
+}
+
+/* Active route link styling — NavLink adds "active" class automatically */
+.header__link.active {
+  color: #e94560;
+}
+
+/* Cart link wrapper — positions the badge */
+.header__cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Cart item count badge */
+.header__cart-count {
+  background-color: #e94560;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ============================================
+   Responsive — Mobile (below 600px)
+   ============================================ */
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 15px;
+  }
+
+  .header__logo {
+    font-size: 1.2rem;
+  }
+
+  .header__nav {
+    gap: 15px;
+  }
+
+  .header__link {
+    font-size: 0.9rem;
+  }
+}

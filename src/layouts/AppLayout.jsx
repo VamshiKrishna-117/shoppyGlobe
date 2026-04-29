@@ -1,16 +1,17 @@
-// AppLayout - wraps all pages with a shared Header and layout structure
+// AppLayout - wraps all pages with the Header and shared layout structure
 // Outlet renders the matched child route component
 import { Outlet } from 'react-router-dom';
+import Header from '../components/Header';
 
 const AppLayout = () => {
   return (
     <div>
-      <header>
-        <h1>ShoppyGlobe</h1>
-        {/* Header component will replace this in Phase 3 */}
-      </header>
-      <main>
-        <Outlet /> {/* Child routes render here */}
+      {/* Header with navigation — cartCount will be wired to Redux in Phase 5 */}
+      <Header cartCount={0} />
+
+      {/* Main content area — child routes render here */}
+      <main style={{ padding: '20px' }}>
+        <Outlet />
       </main>
     </div>
   );
