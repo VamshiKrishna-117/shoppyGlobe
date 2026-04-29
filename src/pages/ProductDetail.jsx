@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import useProductFetch from '../hooks/useProductFetch';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -15,6 +16,10 @@ const ProductDetail = () => {
   const { data: product, loading, error } = useProductFetch(
     `https://dummyjson.com/products/${id}`
   );
+
+  // Set document title to product name if available, otherwise "Loading Product"
+  useDocumentTitle(product ? product.title : 'Loading Product...');
+
 
   // useDispatch gives us access to dispatch Redux actions
   const dispatch = useDispatch();
