@@ -2,11 +2,12 @@
 // Combines all slices (cart, search) into one store
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './cartSlice';
+import searchReducer from './searchSlice';
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
-    // search reducer will be added in Phase 6
+    search: searchReducer,
   },
 });
 
