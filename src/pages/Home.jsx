@@ -1,9 +1,11 @@
 // Home page - displays the product list
+// This is the landing page of the application (route: "/")
+import ProductList from '../components/ProductList';
+
 const Home = () => {
   return (
     <div>
-      <h2>Home Page</h2>
-      <p>Product list will go here</p>
+      <ProductList />
     </div>
   );
 };
