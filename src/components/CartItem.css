@@ -1,0 +1,120 @@
+/* ============================================
+   CartItem Component Styles
+   ============================================ */
+
+/* Single cart item row */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 12px;
+}
+
+/* Cart item image */
+.cart-item__image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 5px;
+  flex-shrink: 0;
+}
+
+/* Cart item details (title, price) */
+.cart-item__details {
+  flex-grow: 1;
+}
+
+.cart-item__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.cart-item__price {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Quantity controls container */
+.cart-item__quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Quantity +/- buttons */
+.cart-item__qty-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.cart-item__qty-btn:hover {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border-color: #1a1a2e;
+}
+
+/* Current quantity display */
+.cart-item__qty-value {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Subtotal for this item */
+.cart-item__subtotal {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e94560;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Remove button */
+.cart-item__remove {
+  padding: 6px 12px;
+  background-color: transparent;
+  color: #e94560;
+  border: 1px solid #e94560;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-item__remove:hover {
+  background-color: #e94560;
+  color: #ffffff;
+}
+
+/* ============================================
+   Responsive — Mobile
+   ============================================ */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cart-item__subtotal {
+    text-align: left;
+  }
+}
