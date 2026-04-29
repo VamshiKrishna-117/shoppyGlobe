@@ -4,9 +4,12 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { selectCartItems, selectCartTotal, clearCart } from '../redux/cartSlice';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './Checkout.css';
 
 const Checkout = () => {
+  useDocumentTitle('Checkout');
+
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const dispatch = useDispatch();
