@@ -4,6 +4,7 @@
 //   item (object) - cart item data { ...product, quantity }
 import { useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../redux/cartSlice';
+import PropTypes from 'prop-types';
 import './CartItem.css';
 
 const CartItem = ({ item }) => {
@@ -66,6 +67,16 @@ const CartItem = ({ item }) => {
       </button>
     </div>
   );
+};
+
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    thumbnail: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default CartItem;
