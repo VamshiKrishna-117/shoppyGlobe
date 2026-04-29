@@ -73,6 +73,7 @@
 
 .cart__continue-btn:hover {
   background-color: #ddd;
+  color: #1a1a2e;
 }
 
 /* Checkout button */
@@ -88,6 +89,7 @@
 
 .cart__checkout-btn:hover {
   background-color: #c73650;
+  color: #ffffff;
 }
 
 /* ============================================
