@@ -1,0 +1,32 @@
+/* ============================================
+   ProductList Search Bar Styles
+   ============================================ */
+
+/* Search bar container */
+.product-list__search {
+  margin: 15px 0 20px;
+}
+
+/* Search input field */
+.product-list__search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.product-list__search-input:focus {
+  border-color: #e94560;
+}
+
+/* No results message */
+.product-list__no-results {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 1.1rem;
+}
